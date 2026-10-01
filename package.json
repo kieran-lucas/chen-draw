@@ -1,0 +1,40 @@
+{
+  "name": "chen-studio",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:smoke": "node scripts/smoke.mjs",
+    "test:features": "node scripts/features.mjs",
+    "test:desktop": "node scripts/verify-desktop.mjs",
+    "desktop:package": "npm run build && node scripts/package-desktop.mjs",
+    "desktop:install": "npm run desktop:package && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/install-desktop.ps1",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/lexend": "^5.2.8",
+    "@xyflow/react": "^12.9.3",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "@types/node": "^26.6.3",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "electron": "^44.5.1",
+    "playwright-core": "^1.63.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.2",
+    "vite": "^8.3.1"
+  }
+}

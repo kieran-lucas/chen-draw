@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+smoke.png
+desktop-review.png
+.desktop-package/
+release/
+build-assets/
